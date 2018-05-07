@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="inputsection">
+    
+    <text class="name">姓名：</text>
+     <input class='nameInput' name="" placeholder="请输入你的姓名" />
+    <text class="phoneNumber">电话：</text>
+     <input class='phoneNumberInput' name="" placeholder="以便用于联系你" />
+    <text class="copyNumber">选择打印份数：</text>
+     <input class='copyNumberinput' name="" placeholder="1" />
+    <radio-group name="radio-group">
+    <text class="surface">选择打印单双面:</text>
+      <label><radio value="radio1"/>单面</label>
+      <label><radio value="radio2"/>双面</label>
+    </radio-group>
+    
+  </view>
+
+ <view class="pickersection">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      寝室选择：{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}} {{multiArray[3][multiIndex[3]]}}
+    </view>
+  </picker>
+</view>
+  
+  <view class="note-section">
+    <view class="note-section-title">备注：</view>
+    <view class="textarea-wrp">
+      <textarea auto-focus="true" style="height: 3em" />
+    </view>
+  </view> 
+  <button class="uploadFile" bindtap="upload">上传文件</button>   
+       
+</view>

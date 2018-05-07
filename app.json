@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/aboutme/aboutme"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "成都理工大学宿舍打印服务",
+    "navigationBarTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home_white.png",
+        "selectedIconPath": "images/home_black.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "images/order_white.png",
+        "selectedIconPath": "images/order_black.png"
+      },
+      {
+        "pagePath": "pages/aboutme/aboutme",
+        "text": "关于",
+        "iconPath": "images/aboutme_white.png",
+        "selectedIconPath": "images/aboutme_black.png"
+      }
+    ]
+  }
+}

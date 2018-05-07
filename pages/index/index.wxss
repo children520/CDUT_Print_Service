@@ -1,0 +1,38 @@
+.container{
+  
+}
+
+.pickersection{
+  
+
+  
+}
+.name{
+
+}
+.input{
+
+}
+.inputsection{
+ 
+}
+.note-section{
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.note-section:last-child{
+  margin-bottom: 0;
+}
+
+.note-section-title{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #F8F8F8;
+}

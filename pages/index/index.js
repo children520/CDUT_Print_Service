@@ -1,6 +1,14 @@
 const app=getApp();
 Page({
   data: {
+    name:"",
+    PhoneNumber:"",
+    copyNumber:"",
+    singleOrdouble:"",
+    dormitory:"",
+    ExtraInformation:"",
+    multiIndex: [0, 0, 0],
+    formation:"",
     multiArray: [['松林', '珙桐', '银杏', '香樟', '芙蓉'], ['1', '2', '3', '4', '5'],[],['101','102','103','104']],
     objectMultiArray: [
       [
@@ -82,7 +90,7 @@ Page({
 
       ],
     
-    multiIndex: [0, 0, 0],
+    
    
   },
   bindMultiPickerChange: function (e) {
@@ -139,6 +147,56 @@ Page({
         break;
     }
     this.setData(data);
+  },
+  bindNameInput: function (e) {
+    console.log('姓名：', e.detail.value)
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  bindPhoneInput: function (e) {
+    console.log('电话：', e.detail.value)
+    this.setData({
+      PhoneNumber: e.detail.value
+    })
+  },
+  bindNumbernput: function (e) {
+    console.log('电话：', e.detail.value)
+    this.setData({
+      copyNumber: e.detail.value
+    })
+  },
+  bindContraryInput: function (e) {
+    console.log('单双面：', e.detail.value)
+    var value=e.detail.value
+    if(value=='radio1'){
+      this.setData({
+        singleOrdouble:"单面"
+      })
+    }else{
+      this.setData({
+        singleOrdouble:"双面"
+      })
+    }
+  },
+  bindFormationInput: function (e) {
+    console.log('格式：', e.detail.value)
+    var value = e.detail.value
+    if (value == 'radio1') {
+      this.setData({
+        formation:"Word"
+      })
+    } else {
+      this.setData({
+        formation:"PDF"
+      })
+    }
+  },
+  ExtraInformationInput: function (e) {
+    console.log('备注：', e.detail.value)
+    this.setData({
+      ExtraInformation: e.detail.value
+    })
   },
   toDetail: function (e) {
     // console.log(e);

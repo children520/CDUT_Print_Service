@@ -1,34 +1,57 @@
-<view class="container">
+
+<view>
+
   <view class="inputsection">
-    
-    <text class="name">姓名：</text>
-     <input class='nameInput' name="" placeholder="请输入你的姓名" />
-    <text class="phoneNumber">电话：</text>
-     <input class='phoneNumberInput' name="" placeholder="以便用于联系你" />
-    <text class="copyNumber">选择打印份数：</text>
-     <input class='copyNumberinput' name="" placeholder="1" />
-    <radio-group name="radio-group">
-    <text class="surface">选择打印单双面:</text>
+    <view class="implyInput"><text>姓名：</text></view>
+    <view class='realInput'><input name="" placeholder="请输入你的姓名" bindinput="bindNameInput"/></view>
+  </view>
+
+  <view class="inputsection">
+     <view class="implyInput"><text>电话：</text></view>
+     <view class='realInput'><input name="" placeholder="以便用于联系你" bindinput="bindPhoneInput" /></view>
+  </view>
+
+  <view class="inputsection">
+    <view class="implyInput"><text>份数：</text></view>
+    <view class='realInput'><input name="" placeholder="请输入打印份数" bindinput="bindNumbernput"/></view>
+  </view>
+
+  <view class="inputsection-contrary">
+    <radio-group name="radio-group"bindchange="bindContraryInput">
+    <text class="implyInput">单双面:</text>
       <label><radio value="radio1"/>单面</label>
       <label><radio value="radio2"/>双面</label>
     </radio-group>
-    
   </view>
+
+  <view class="inputsection-contrary">
+    <radio-group name="radio-group"bindchange="bindFormationInput">
+    <text class="implyInput">格式:</text>
+      <label><radio value="radio1"/>Word</label>
+      <label><radio value="radio2"/>PDF</label>
+    </radio-group>
+  </view>
+
 
  <view class="pickersection">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
-      寝室选择：{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}} {{multiArray[3][multiIndex[3]]}}
+      <text class="implyInput">寝室选择：</text>
+      {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}} {{multiArray[3][multiIndex[3]]}}
     </view>
   </picker>
 </view>
   
+  
+
   <view class="note-section">
-    <view class="note-section-title">备注：</view>
+    <view class="note-section-title"><text>备注：</text></view>
     <view class="textarea-wrp">
-      <textarea auto-focus="true" style="height: 3em" />
+      <textarea auto-focus="true" style="height: 3em" bindinput="ExtraInformationInput"/>
     </view>
   </view> 
-  <button class="uploadFile" bindtap="upload">上传文件</button>   
-       
-</view>
+  
+  <view class='uploadFile'>
+   <button type='primary' formType="submit">上传文件</button>
+  </view>
+</view>      

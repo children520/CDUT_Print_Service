@@ -1,1 +1,77 @@
-/* pages/aboutme/aboutme.wxss */
+page{
+  background: #EFEFF3;
+}
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:98%;
+	padding: 50rpx 0;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: auto;
+  margin-top: 15rpx;
+  
+}
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: black;
+  margin-top: 30rpx;
+}
+.user-function{
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 10rpx;
+  height: 180rpx;
+}
+.extra-information{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 15rpx;
+}
+.extra-information-title{
+  display: flex;
+  flex-wrap: wrap;
+}
+.extra-information-image{
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  margin-right: 10rpx;
+}
+.extra-information-advice{
+  font-size: 40rpx;
+  color: black;
+  font-weight: 600;
+  margin-top: 15rpx;
+ 
+  
+}
+.extra-information-submit{
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  align-items: flex-end;
+  
+}
+.extra-information-textarea{
+  padding: 0 25rpx;
+  background-color: #EFEFF3;
+  border-radius:20rpx;
+  width: 90%;
+  height:80rpx;
+  margin: auto;
+  position: relative;
+  margin-bottom: 5rpx;
+  
+}

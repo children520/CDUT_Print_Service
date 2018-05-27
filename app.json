@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/order/order",
-    "pages/aboutme/aboutme"
+    "pages/aboutme/aboutme",
+    
+    "pages/logs/logs"
+    
    
   ],
   "window": {

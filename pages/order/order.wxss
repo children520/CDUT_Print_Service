@@ -1,1 +1,53 @@
-/* pages/order/order.wxss */
+.order-title{
+  font-size: 40rpx;
+  margin-top: 30rpx;
+  
+  margin-bottom: 20rpx;
+}
+.title-content{
+  margin-bottom: 15rpx;
+  display: flex;
+  justify-content: space-around;
+  font-size: 42rpx;
+}
+.tilte-content-button{
+  border: 3rpx solid 	#09BB07;
+  border-radius: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  color: #09BB07;
+}
+.order-content{
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+  border: 10rpx solid #EFEFF3;
+  width: 98%;
+  
+}
+.order-content-title{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-image{
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+  margin-right: 10rpx;
+}
+.content-information{
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+.content-delivery{
+  margin-top: 10rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.content-execution{
+  text-align: right;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+  
+}

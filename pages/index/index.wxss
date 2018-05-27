@@ -1,38 +1,62 @@
-.container{
-  
-}
-
-.pickersection{
-  
-
-  
-}
-.name{
-
-}
-.input{
-
+page{
+  background: #EFEFE3;
 }
 .inputsection{
- 
+  display: flex;
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 20rpx;
+  height: 80rpx;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+.implyInput{
+  font-size: 42rpx;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+.realInput{
+  font-size: 40rpx;
+}
+.inputsection-contrary{
+  display: flex;
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 20rpx;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+}
+.pickersection{
+   display: flex;
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 20rpx;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
 }
 .note-section{
-  width: 100%;
-  margin-bottom: 60rpx;
+  border-radius: 20rpx;
+  background:#ffffff;
+  width: 98%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 15rpx;
+  height: 250rpx;
 }
-
-.note-section:last-child{
-  margin-bottom: 0;
-}
-
 .note-section-title{
-  font-size: 28rpx;
-  color: #999999;
-  margin-bottom: 10rpx;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 15rpx;
 }
-.textarea-wrp {
-  padding: 0 25rpx;
-  background-color: #F8F8F8;
+.uploadFile{
+  margin-top: 30rpx;
 }

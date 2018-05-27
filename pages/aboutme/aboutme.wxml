@@ -1,2 +1,30 @@
-<!--pages/aboutme/aboutme.wxml-->
-<text>pages/aboutme/aboutme.wxml</text>
+<view class>
+  <view class='userinfo'>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+<view class='user-function'>
+  <view class='extra-information'>
+    <view class='extra-information-title'>
+      <view class='extra-information-image'>
+        <image src='/images/text.png' style='width:30px;height:30px;'></image>
+      </view>
+      <view class='extra-information-advice'><text>您的意见：</text></view>
+    </view>
+    <view class='extra-information-submit'><button size='mini' type='primary'>点击提交</button></view>  
+  </view>
+  <view class='extra-information-textarea'><textarea bindblur="bindTextAreaBlur" auto-height /></view>
+</view>
+
+
+   <view class='extra-information'>
+    <view class='extra-information-title'>
+      <view class='extra-information-image'>
+        <image src='/images/consult.png' style='width:30px;height:30px;'></image>
+      </view>
+      <view class='extra-information-advice'><text>联系我们：</text></view>
+    </view>
+    <view class='extra-information-submit'><button size='mini' type='primary'>呼叫电话</button></view>  
+  
+  </view>
+</view>

@@ -9,6 +9,7 @@ Page({
     ExtraInformation:"",
     multiIndex: [0, 0, 0],
     formation:"",
+    requestNumber:0,
     multiArray: [['松林', '珙桐', '银杏', '香樟', '芙蓉'], ['1', '2', '3', '4', '5'],[],['101','102','103','104']],
     objectMultiArray: [
       [
@@ -98,6 +99,7 @@ Page({
     this.setData({
       multiIndex: e.detail.value
     })
+    
   },
   bindMultiPickerColumnChange: function (e) {
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
@@ -153,31 +155,39 @@ Page({
     this.setData({
       name: e.detail.value
     })
+    
   },
   bindPhoneInput: function (e) {
     console.log('电话：', e.detail.value)
     this.setData({
       PhoneNumber: e.detail.value
     })
+    
   },
   bindNumbernput: function (e) {
-    console.log('电话：', e.detail.value)
+    console.log('份数：', e.detail.value)
     this.setData({
       copyNumber: e.detail.value
     })
+    
   },
   bindContraryInput: function (e) {
     console.log('单双面：', e.detail.value)
-    var value=e.detail.value
-    if(value=='radio1'){
+   
+    var value = e.detail.value
+    
+    if(value =="radio1"){
       this.setData({
         singleOrdouble:"单面"
+        
       })
     }else{
       this.setData({
         singleOrdouble:"双面"
       })
     }
+    
+    
   },
   bindFormationInput: function (e) {
     console.log('格式：', e.detail.value)
@@ -191,12 +201,14 @@ Page({
         formation:"PDF"
       })
     }
+   
   },
   ExtraInformationInput: function (e) {
     console.log('备注：', e.detail.value)
     this.setData({
       ExtraInformation: e.detail.value
     })
+    
   },
   toDetail: function (e) {
     // console.log(e);
@@ -213,6 +225,27 @@ Page({
     // wx.setStorageSync('title', title)
   },
   upload: function () {
+    console.log(this.data.multiIndex)
+    console.log(this.data.name)
+    console.log(this.data.PhoneNumber)
+    console.log(this.data.copyNumber)
+    console.log(this.data.singleOrdouble)
+    console.log(this.data.formation)
+    console.log(this.data.ExtraInformation)
+    try {
+      wx.setStorageSync('dormitry', this.data.multiIndex)
+      wx.setStorageSync('name', this.data.name)
+      wx.setStorageSync('phoneNumber', this.data.PhoneNumber)
+      wx.setStorageSync('copyNumber', this.data.copyNumber)
+      wx.setStorageSync('singleOrdouble', this.data.singleOrdouble)
+      wx.setStorageSync('formation', this.data.formation)
+      wx.setStorageSync('extraInformation', this.data.ExtraInformation)
+      
+    } catch (e) {
+      wx.showToast({
+        title: '本地消息存储失败',
+      })
+    }
     wx.chooseImage({
       success: function (res) {
         var tempFilePaths = res.tempFilePaths

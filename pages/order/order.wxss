@@ -1,6 +1,6 @@
 .order-title{
   font-size: 40rpx;
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   
   margin-bottom: 20rpx;
 }
@@ -9,15 +9,14 @@
   display: flex;
   justify-content: space-around;
   font-size: 42rpx;
+  border-bottom: 8rpx solid #EFEFF3;
 }
 .tilte-content-button{
-  border: 3rpx solid 	#09BB07;
-  border-radius: 10rpx;
   padding-top: 10rpx;
   padding-bottom: 10rpx;
-  padding-left: 40rpx;
-  padding-right: 40rpx;
-  color: #09BB07;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  
 }
 .order-content{
   border-radius: 20rpx;

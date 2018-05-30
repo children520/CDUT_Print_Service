@@ -40,6 +40,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestNumber: -1,
+
   }
 })

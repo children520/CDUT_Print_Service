@@ -7,6 +7,7 @@ Page({
    */
   data: {
     userInfo: {},
+    userAdvice:""
   },
 
   /**
@@ -88,5 +89,20 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  userAdvice: function (e) {
+    console.log(e.detail.value)
+    
+    this.setData({
+      userAdvice:e.detail.value
+    })
+  },
+  userAdviceSubmit: function () {
+    console.log(this.data.userAdvice)
+  },
+  callPhoneNumber:function(){
+    wx.makePhoneCall({
+      phoneNumber: '13008181759' //仅为示例，并非真实的电话号码
+    })
   }
 })

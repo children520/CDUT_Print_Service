@@ -10,9 +10,9 @@ Page({
     ExtraInformati1on:"",
     dormitry:[],
     formation:"",
-    requestNumber:0,
     IsOkInformaion:false,
     pageNumber:0,
+    
     //orderList:[],
     //propertyList:{},
     multiArray: [['松林', '珙桐', '银杏', '香樟', '芙蓉'], ['1', '2', '3', '4', '5'],[],['101','102','103','104']],
@@ -298,10 +298,13 @@ Page({
   
   },
   upload: function (e) {
+    
+    
+    
+    
     var IsOkInformaio=this.data.IsOkInformaion
     var requestNumber = this.data.requestNumber
-    var IsOkInformaio = this.data.IsOkInformaion
-    var requestNumber = this.data.requestNumber
+    
     var copyNumber = this.data.copyNumber
     var singleOrdouble = this.data.singleOrdouble
     var name = this.data.name
@@ -310,27 +313,12 @@ Page({
     var formation = this.data.formation
     var pageNumber = this.data.pageNumber
     var ExtraInformation = this.data.ExtraInformation
-    console.log(dormitry)
-    console.log(name)
-    console.log(phoneNumber)
-    console.log(copyNumber)
-    console.log(singleOrdouble)
-    console.log(formation)
-    console.log(pageNumber)
+    
 
     if(IsOkInformaio){
-        this.setData({
-          requestNumber: this.data.requestNumber + 1
-        })
-        console.log("request"+typeof this.data.requestNumber.toString())
-        try{
-          wx.setStorageSync('requestNumber', this.data.requestNumber.toString())
-        }catch(e){
-          wx.showToast({
-            title: '本地消息存储失败',
-          })
-        }
-        
+      app.globalData.requestNumber = app.globalData.requestNumber + 1
+      console.log("request" + app.globalData.requestNumber)
+      
         /*
        
         this.data.propertyList.name = this.data.name

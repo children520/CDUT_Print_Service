@@ -1,13 +1,13 @@
 <view>
   <view class='order-title'>
    <view class='title-content'>
-      <view class='tilte-content-button' bindtap='allOrders'><button type="primary">全部订单</button></view>
+      <view class='tilte-content-button' bindtap='allOrders' ><button type="primary" >全部订单</button></view>
       <view class='tilte-content-button' bindtap='refundSituation'><button type="primary">退款情况</button></view>
       
    </view> 
   </view>
 
-  <view class='order-content' wx:for="{{informationArray}}" wx:if="{{condition}}">
+  <view class='order-content' wx:for="{{orderList}}" wx:if="{{condition[index]}}">
       <view class='order-content-title'>
         <view class='content-image'>
           <image src="{{item.iconpath}}" style='width:30px;height:30px' ></image>
@@ -22,7 +22,7 @@
    
       <view class='content-delivery'><text>订单配送情况</text></view>
       <view class='content-execution'>
-        <button size='mini' plain='true' type='primary'>取消订单</button>
+        <button size='mini' plain='true' type='primary' bindtap='cancelOrder' data-id='{{index}}'>取消订单</button>
       </view>
   </view>
 

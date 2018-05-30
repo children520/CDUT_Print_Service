@@ -1,15 +1,20 @@
 const app=getApp();
+
 Page({
   data: {
     name:"",
-    PhoneNumber:"",
+    phoneNumber:"",
     copyNumber:"",
     singleOrdouble:"",
-    dormitory:"",
-    ExtraInformation:"",
     multiIndex: [0, 0, 0],
+    ExtraInformati1on:"",
+    dormitry:[],
     formation:"",
     requestNumber:0,
+    IsOkInformaion:false,
+    pageNumber:0,
+    //orderList:[],
+    //propertyList:{},
     multiArray: [['松林', '珙桐', '银杏', '香樟', '芙蓉'], ['1', '2', '3', '4', '5'],[],['101','102','103','104']],
     objectMultiArray: [
       [
@@ -94,10 +99,11 @@ Page({
     
    
   },
+  
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      multiIndex: e.detail.value
+      dormitry: e.detail.value
     })
     
   },
@@ -160,9 +166,15 @@ Page({
   bindPhoneInput: function (e) {
     console.log('电话：', e.detail.value)
     this.setData({
-      PhoneNumber: e.detail.value
+      phoneNumber: e.detail.value
     })
     
+  },
+  bindPageNumbernput:function(e){
+    console.log('页数：', e.detail.value)
+    this.setData({
+      pageNumber: e.detail.value
+    })
   },
   bindNumbernput: function (e) {
     console.log('份数：', e.detail.value)
@@ -224,44 +236,152 @@ Page({
     //也可以通过本地缓存传值
     // wx.setStorageSync('title', title)
   },
-  upload: function () {
-    console.log(this.data.multiIndex)
+  sureInformation:function(){
+    console.log(this.data.dormitry)
     console.log(this.data.name)
-    console.log(this.data.PhoneNumber)
+    console.log(this.data.phoneNumber)
     console.log(this.data.copyNumber)
     console.log(this.data.singleOrdouble)
     console.log(this.data.formation)
-    console.log(this.data.ExtraInformation)
+    console.log(this.data.pageNumber)
     try {
       wx.setStorageSync('dormitry', this.data.multiIndex)
       wx.setStorageSync('name', this.data.name)
-      wx.setStorageSync('phoneNumber', this.data.PhoneNumber)
+      wx.setStorageSync('phoneNumber', this.data.phoneNumber)
       wx.setStorageSync('copyNumber', this.data.copyNumber)
       wx.setStorageSync('singleOrdouble', this.data.singleOrdouble)
       wx.setStorageSync('formation', this.data.formation)
       wx.setStorageSync('extraInformation', this.data.ExtraInformation)
+      wx.setStorageSync('pageNumber', this.data.pageNumber)
       
     } catch (e) {
       wx.showToast({
         title: '本地消息存储失败',
       })
     }
-    wx.chooseImage({
-      success: function (res) {
-        var tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://photo-1256489440.cos.ap-chengdu.myqcloud.com', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'user': 'test'
-          },
+   
+    var IsOkInformaio = this.data.IsOkInformaion
+    var requestNumber = this.data.requestNumber
+    var copyNumber = this.data.copyNumber
+    var singleOrdouble = this.data.singleOrdouble
+    var name = this.data.name
+    var phoneNumber = this.data.phoneNumber
+    var dormitry = this.data.dormitry
+    var formation = this.data.formation
+    var pageNumber = this.data.pageNumber
+    var ExtraInformation = this.data.ExtraInformation
+    if (copyNumber && singleOrdouble && name && phoneNumber && dormitry && formation && pageNumber) {
+      wx.showToast({
+        title: '输入信息成功',
+        icon: 'success',
+        duration: 1000
+      })
+      this.setData({
+        IsOkInformaion: true
+      })
+      
+    }else{
+      wx.showModal({
+        title: '温馨提示',
+        content: '你还没有输入信息哦！',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+     
+    }
+    
+  
+  },
+  upload: function (e) {
+    var IsOkInformaio=this.data.IsOkInformaion
+    var requestNumber = this.data.requestNumber
+    var IsOkInformaio = this.data.IsOkInformaion
+    var requestNumber = this.data.requestNumber
+    var copyNumber = this.data.copyNumber
+    var singleOrdouble = this.data.singleOrdouble
+    var name = this.data.name
+    var phoneNumber = this.data.phoneNumber
+    var dormitry = this.data.dormitry
+    var formation = this.data.formation
+    var pageNumber = this.data.pageNumber
+    var ExtraInformation = this.data.ExtraInformation
+    console.log(dormitry)
+    console.log(name)
+    console.log(phoneNumber)
+    console.log(copyNumber)
+    console.log(singleOrdouble)
+    console.log(formation)
+    console.log(pageNumber)
+
+    if(IsOkInformaio){
+        this.setData({
+          requestNumber: this.data.requestNumber + 1
+        })
+        console.log("request"+typeof this.data.requestNumber.toString())
+        try{
+          wx.setStorageSync('requestNumber', this.data.requestNumber.toString())
+        }catch(e){
+          wx.showToast({
+            title: '本地消息存储失败',
+          })
+        }
+        
+        /*
+       
+        this.data.propertyList.name = this.data.name
+        this.data.propertyList.copyNumber = this.data.copyNumber
+        this.data.propertyList.singleNumber = this.data.singleOrdouble
+        this.data.propertyList.phoneNumber = this.data.phoneNumber
+        this.data.propertyList.formation = this.data.formation
+        this.data.propertyList.dormitry = this.data.dormitry
+        this.data.propertyList.ExtraInformation = this.data.ExtraInformation
+        console.log("requestNumber:"+requestNumber)
+        console.log(this.data.propertyList)
+        var str ='orderList['+requestNumber+']'
+        this.setData({
+          [str]:this.data.propertyList
+        })
+        
+        console.log(this.data.orderList)
+        console.log(this.data.orderList[requestNumber].name)
+        */
+        wx.chooseImage({
           success: function (res) {
-            var data = res.data
-            //do something
+            var tempFilePaths = res.tempFilePaths
+            wx.uploadFile({
+              url: 'https://photo-1256489440.cos.ap-chengdu.myqcloud.com', //仅为示例，非真实的接口地址
+              filePath: tempFilePaths[0],
+              name: 'file',
+              formData: {
+                'user': 'test'
+              },
+              success: function (res) {
+                var data = res.data
+                //wx.showLoading({
+                  //title: '加载中',
+                //})
+
+              }
+            })
           }
         })
-      }
-    })
+    }else{
+      wx.showModal({
+        title: '温馨提示',
+        content: '你还没有输入信息哦！',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
   }
 })

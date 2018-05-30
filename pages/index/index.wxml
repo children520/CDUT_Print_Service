@@ -12,6 +12,11 @@
   </view>
 
   <view class="inputsection">
+    <view class="implyInput"><text>页数：</text></view>
+    <view class='realInput'><input name="" placeholder="请输入文档页数" bindinput="bindPageNumbernput"/></view>
+  </view>
+
+  <view class="inputsection">
     <view class="implyInput"><text>份数：</text></view>
     <view class='realInput'><input name="" placeholder="请输入打印份数" bindinput="bindNumbernput"/></view>
   </view>
@@ -52,6 +57,7 @@
   </view> 
   
   <view class='uploadFile'>
+    <button class="sure-Information" type='primary'bindtap='sureInformation'>确认信息</button>
    <button type='primary'bindtap='upload'>上传文件</button>
   </view>
 </view>      

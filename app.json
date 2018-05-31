@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/aboutme/aboutme",
     "pages/index/index",
+    "pages/aboutme/aboutme",
+    "pages/refund/refund",
     "pages/order/order",
     
+
+    "pages/logs/logs"
     
-    "pages/logs/logs",
-    "pages/refund/refund"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,19 +23,19 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/home_white.png",
-        "selectedIconPath": "images/home_black.png"
+        "selectedIconPath": "images/home_green.png"
       },
       {
         "pagePath": "pages/order/order",
         "text": "订单",
         "iconPath": "images/order_white.png",
-        "selectedIconPath": "images/order_black.png"
+        "selectedIconPath": "images/order_green.png"
       },
       {
         "pagePath": "pages/aboutme/aboutme",
         "text": "关于",
         "iconPath": "images/aboutme_white.png",
-        "selectedIconPath": "images/aboutme_black.png"
+        "selectedIconPath": "images/aboutme_green.png"
       }
     ]
   }

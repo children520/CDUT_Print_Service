@@ -1,16 +1,16 @@
 page{
-  background: #EFEFF3;
+  background: black;
 }
 .userinfo{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:98%;
+  width:95%;
 	padding: 50rpx 0;
   background: #ffffff;
   border-radius: 20rpx;
   margin: auto;
-  margin-top: 15rpx;
+  margin-top: 20rpx;
   
 }
 .userinfo-avatar {
@@ -27,9 +27,9 @@ page{
 .user-function{
   border-radius: 20rpx;
   background:#ffffff;
-  width: 98%;
+  width: 95%;
   margin: auto;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   height: 180rpx;
 }
 .extra-information{
@@ -37,9 +37,9 @@ page{
   justify-content: space-between;
   border-radius: 20rpx;
   background:#ffffff;
-  width: 98%;
+  width: 95%;
   margin: auto;
-  margin-top: 15rpx;
+  margin-top: 20rpx;
 }
 .extra-information-title{
   display: flex;

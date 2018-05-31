@@ -11,7 +11,7 @@ Page({
     dormitry:[],
     formation:"",
     IsOkInformaion:false,
-    pageNumber:0,
+    pageNumber:"",
     
     //orderList:[],
     //propertyList:{},
@@ -318,6 +318,15 @@ Page({
     if(IsOkInformaio){
       app.globalData.requestNumber = app.globalData.requestNumber + 1
       console.log("request" + app.globalData.requestNumber)
+      var date=new Date()
+      var dateObject={}
+      var dateList=[]
+      dateObject.year=date.getFullYear()
+      dateObject.month=date.getMonth()+1
+      dateObject.day=date.getDate()
+      dateList.push(dateObject)
+      console.log(dateList)
+      wx.setStorageSync('dateList', dateList)
       
         /*
        

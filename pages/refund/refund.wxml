@@ -1,2 +1,35 @@
-<!--pages/refund/refund.wxml-->
-<text>pages/refund/refund.wxml</text>
+<view>
+  <view class='refund-title'><text class='refund-title-text'>退款</text></view>
+  
+  <view class='refund-content' wx:for="{{refundList}}">
+    
+      <view class='refund-content-title'>
+        <view class='refund-conten-title-information'>
+            <view class='refund-content-image'>
+              <image src="/images/word.png" style='width:30px;height:30px' ></image>
+            </view>
+            <view class='refund-content-information'>
+              <text>{{item.formation}}</text>
+              <text>-{{item.copyNumber}}份-</text>
+              <text>{{item.singleOrdouble}}</text>
+            </view>
+        </view>
+        <view class='refund-date'><text>{{dateList[index].year}}.{{dateList[index].month}}.{{dateList[index].day}}</text></view>
+      </view>
+      
+      
+    
+        <view class='refund-situation'><text>退款详情</text></view>
+      
+        <view class='refund-user-information'>
+          <view class='refund-name'><text>电话:{{item.phoneNumber}}</text></view>
+          <view class='refund-phone'><text>姓名:{{item.name}}</text></view>
+        </view>
+        <view class='refund-user-information'>
+          <view class='refund-dormitory'><text>寝室:{{item.dormitry}}</text></view>
+          <view class='refund-money'><text>金额:{{item.money}}</text></view>
+        </view>
+    
+  </view>
+
+</view>

@@ -42,6 +42,6 @@ App({
   globalData: {
     userInfo: null,
     requestNumber: -1,
-
+    
   }
 })

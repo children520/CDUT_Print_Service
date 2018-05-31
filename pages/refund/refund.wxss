@@ -1,1 +1,69 @@
-/* pages/refund/refund.wxss */
+page{
+  background: black;
+}
+.refund-title{
+  background-color: #EFEFE3;
+  width: 92%;
+  margin: auto;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.refund-title-text{
+  font-size: 48rpx;
+  align-items: center;
+  
+  font-weight: bold;
+  letter-spacing: 60rpx;
+}
+.refund-content{
+  background: white;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  border: 10rpx solid #EFEFF3;
+  width: 90%;
+  margin: auto;
+  margin-top: 20rpx;
+}
+
+.refund-content-title{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.refund-conten-title-information{
+  display: flex;
+  
+}
+.refund-date{
+  margin-top: 20rpx;
+  margin-left: 160rpx;
+  
+  font-weight: normal;
+  font-size: 30rpx;
+
+}
+.refund-content-information{
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+.refund-content-image{
+   margin-top: 10rpx;
+   margin-left: 15rpx;
+   margin-right: 10rpx;
+}
+.refund-situation{
+  margin-top: 10rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.refund-user-information{
+  display: flex;
+  font-size: 32rpx;
+  justify-content: space-around;
+  background-color: #353535;
+  color: white;
+  border-radius: 10rpx;
+  margin-top: 5rpx;
+}

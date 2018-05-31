@@ -1,14 +1,18 @@
 page{
-  background: #EFEFE3;
+  background: #000000;
+}
+.user-information{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 .inputsection{
   display: flex;
   border-radius: 20rpx;
   background:#ffffff;
-  width: 95%;
+  width: 90%;
   margin: auto;
   margin-top: 20rpx;
-  height: 80rpx;
+  height: 65rpx;
   align-items: center;
   justify-content: flex-end;
   
@@ -25,10 +29,10 @@ page{
   display: flex;
   border-radius: 20rpx;
   background:#ffffff;
-  width: 95%;
+  width: 90%;
   margin: auto;
   margin-top: 20rpx;
-  height: 80rpx;
+  height: 65rpx;
   align-items: center;
   justify-content: center;
 }
@@ -36,21 +40,21 @@ page{
    display: flex;
   border-radius: 20rpx;
   background:#ffffff;
-  width: 95%;
+  width: 90%;
   margin: auto;
   margin-top: 20rpx;
-  height: 80rpx;
+  height: 65rpx;
   align-items: center;
   justify-content: center;
 }
 .note-section{
   border-radius: 20rpx;
   background:#ffffff;
-  width: 95%;
+  width: 89%;
   margin: auto;
   margin-top: 20rpx;
-  margin-bottom: 15rpx;
-  height: 230rpx;
+  margin-bottom: 20rpx;
+  height: 160rpx;
 }
 .note-section-title{
   font-size: 40rpx;
@@ -59,9 +63,9 @@ page{
 }
 .uploadFile{
   margin-top: 30rpx;
-  width: 95%;
+  width: 90%;
   margin: auto;
 }
 .sure-Information{
-  margin-bottom: 15rpx;
+  margin-bottom: 20rpx;
 }

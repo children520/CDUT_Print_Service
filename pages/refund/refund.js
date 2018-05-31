@@ -1,18 +1,21 @@
 // pages/refund/refund.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    refundList:[],
+    dateList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      console.log(options)
+      
   },
 
   /**
@@ -26,7 +29,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.data.refundList=wx.getStorageSync('refundList')
+    this.data.dateList=wx.getStorageSync('dateList')
+    console.log(this.data.refundList)
+    
+    this.setData({
+      refundList:this.data.refundList,
+      dateList:this.data.dateList
+    })
+    console.log(this.data.dateList)
   },
 
   /**
@@ -47,7 +58,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+     
   },
 
   /**
